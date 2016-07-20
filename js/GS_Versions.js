@@ -25,10 +25,10 @@ function picturize(nStr)
 			return pup;
 			break;
 		case "AE": 
-			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/ae.png" alt="After Effects Plugin" style="width:20px; height:20px;">';
+			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/AE.png" alt="After Effects Plugin" style="width:20px; height:20px;">';
 			break;
 		case "Maya": 
-			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/Maya.png" alt="Maya Plugin" style="width:20px; height:20px;">';
+			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/maya.png" alt="Maya Plugin" style="width:20px; height:20px;">';
 			break;
 		case "PS": 
 			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/PS.png" alt="Photoshop Add-On" style="width:20px; height:20px;">';
