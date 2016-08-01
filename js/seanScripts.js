@@ -141,3 +141,55 @@ function displayAudio(json)
 	}
 	document.getElementById(audioDiv).innerHTML += pre_html + actual_html + post_html;
 }
+
+// =============================================
+// ==========REGEX SEARCH SPREADSHEETS==========
+// =============================================
+
+$('#nosw').hide();
+
+$( document ).ready(function() {
+	$('#swload1').remove();
+	$('#swload2').remove();
+	$('#swload3').remove();
+
+	var $rows = $('#swlist tr');
+	$('#search').keyup(function() {
+		var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+		reg = RegExp(val, 'i'),
+		text;
+		$rows.show().filter(function() {
+			text = $(this).text().replace(/\s+/g, ' ');
+			return !reg.test(text);
+		}).hide();
+	
+	var numTR = $('#swlist').find('tr').length;
+	var numHide = $('#swlist').find('tr:hidden').length;
+	
+	if (numTR === numHide) {
+		console.log("all cells hidden");
+		$('#nosw').show();
+	} else {
+		console.log("some cells are visible");
+		$('#nosw').hide();
+	}
+	});
+});
+
+// =============================================
+// =================TABBED DIVS=================
+// =============================================
+
+$(document).ready(function(){
+	
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	});
+
+});
