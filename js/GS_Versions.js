@@ -44,7 +44,7 @@ function picturize(nStr)
 }
 
 function displayDigital(json) 
-{	
+{
 
 	var pre_html = '<table class="tableSection"><thead>';
 	for (var y = 0; y<digitalHeaders.length; y++)
