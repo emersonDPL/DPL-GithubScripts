@@ -41,6 +41,7 @@ function picturize(nStr)
 
 function displayDigital(json) 
 {	
+
 	var pre_html = '<table class="tableSection"><thead>';
 	for (var y = 0; y<digitalHeaders.length; y++)
 	{
@@ -65,7 +66,7 @@ function displayDigital(json)
 				var curHeader=digitalHeaders[j].toString().toLowerCase().replace(" ", "");			
 				actual_html+=[	
 				'<td>', 
-				picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
+				picturize(json.feed.entry[i]["gsx$"+curHeader][$t]), 
 				'</td>',
 				].join(''); 
 			}
