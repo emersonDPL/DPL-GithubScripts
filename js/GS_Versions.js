@@ -46,7 +46,7 @@ function picturize(nStr)
 function displayDigital(json) 
 {
 
-	var pre_html = '<table class="tableSection"><thead>';
+	var pre_html = '<table class="tableSection table table-striped"><thead>';
 	for (var y = 0; y<digitalHeaders.length; y++)
 	{
 		pre_html += [ "<th>"+digitalHeaders[y].toString()+"</th>" ].join('');
@@ -82,7 +82,7 @@ function displayDigital(json)
 
 function displayFilm(json) 
 {	
-	var pre_html = '<table class="tableSection"><thead>';
+	var pre_html = '<table class="tableSection table table-striped"><thead>';
 	for (var y = 0; y<filmHeaders.length; y++)
 	{
 		pre_html += [ "<th>"+filmHeaders[y].toString()+"</th>" ].join('');
@@ -117,7 +117,7 @@ function displayFilm(json)
 
 function displayAudio(json) 
 {	
-	var pre_html = '<table class="tableSection"><thead>';
+	var pre_html = '<table class="tableSection table table-striped"><thead>';
 	for (var y = 0; y<AudioHeaders.length; y++)
 	{
 		pre_html += [ "<th>"+AudioHeaders[y].toString()+"</th>" ].join('');
