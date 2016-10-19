@@ -37,6 +37,9 @@ function picturize(nStr)
 		case "PS": 
 			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/PS.png" alt="Photoshop Add-On" style="width:20px; height:20px;">';
 			break;
+		case "Avid":
+			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/avid.png" alt="Avid Plugin" style="width:20px; height:20px;">';
+			break;
 		default: 
 			return nStr;
 			break;
