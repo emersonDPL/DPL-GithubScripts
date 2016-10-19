@@ -121,6 +121,7 @@ function displayFilm(json)
 function displayAudio(json) 
 {	
 	var pre_html = '<table class="tableSection table table-striped"><thead>';
+	
 	for (var y = 0; y<audioHeaders.length; y++)
 	{
 		pre_html += [ "<th>"+audioHeaders[y].toString()+"</th>" ].join('');
@@ -128,20 +129,24 @@ function displayAudio(json)
 	pre_html += ['</thead><tbody id="swlist"><tr>'].join('');
 	var actual_html='';
 	var post_html = '</tr></tbody></table>';
+	
 	var len = json.feed.entry.length;
-		for (var i=0; i<len; i++) 
-		{
+	for (var i=0; i<len; i++) 
+	{
 		actual_html+=['<tr>'].join('');
-		for (var j = 0; j<audioHeaders.length; j++)
+		if (json.feed.entry[i]["gsx$status"]["$t"] !== "dead")
 		{
-			var curHeader=audioHeaders[j].toString().toLowerCase().replace(" ", "");
-		actual_html+=[	
-			'<td>', 
-			picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
-			'</td>',
-		].join(''); 
+			for (var j = 0; j<audioHeaders.length; j++)
+			{
+				var curHeader=audioHeaders[j].toString().toLowerCase().replace(" ", "");
+				actual_html+=[	
+				'<td>', 
+				picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
+				'</td>',
+				].join(''); 
+			}
+			actual_html+=['</tr>'].join('');
 		}
-		actual_html+=['</tr>'].join('');
 	}
 	document.getElementById(audioDiv).innerHTML += pre_html + actual_html + post_html;
 }
