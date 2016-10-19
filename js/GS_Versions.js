@@ -121,9 +121,9 @@ function displayFilm(json)
 function displayAudio(json) 
 {	
 	var pre_html = '<table class="tableSection table table-striped"><thead>';
-	for (var y = 0; y<AudioHeaders.length; y++)
+	for (var y = 0; y<audioHeaders.length; y++)
 	{
-		pre_html += [ "<th>"+AudioHeaders[y].toString()+"</th>" ].join('');
+		pre_html += [ "<th>"+audioHeaders[y].toString()+"</th>" ].join('');
 	}
 	pre_html += ['</thead><tbody id="swlist"><tr>'].join('');
 	var actual_html='';
@@ -132,9 +132,9 @@ function displayAudio(json)
 		for (var i=0; i<len; i++) 
 		{
 		actual_html+=['<tr>'].join('');
-		for (var j = 0; j<AudioHeaders.length; j++)
+		for (var j = 0; j<audioHeaders.length; j++)
 		{
-			var curHeader=AudioHeaders[j].toString().toLowerCase().replace(" ", "");
+			var curHeader=audioHeaders[j].toString().toLowerCase().replace(" ", "");
 		actual_html+=[	
 			'<td>', 
 			picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
