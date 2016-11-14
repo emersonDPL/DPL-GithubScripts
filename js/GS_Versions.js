@@ -142,10 +142,10 @@ function displayAudio(json)
 			
 			for (var j = 0; j<audioHeaders.length; j++)
 			{
-				var curHeader=audioHeaders[j].toString().toLowerCase().replace(" ", "");			
+				var curAudHeader=audioHeaders[j].toString().toLowerCase().replace(" ", "");			
 				actual_html+=[	
 				'<td>', 
-				picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
+				picturize(json.feed.entry[i]["gsx$"+curAudHeader]["$t"]), 
 				'</td>',
 				].join(''); 
 			}
