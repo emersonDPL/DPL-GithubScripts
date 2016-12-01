@@ -105,6 +105,7 @@
 	height: 36px;
 	cursor: pointer;
 	z-index: 8040;
+	padding-top: 50px;
 }
 
 .fancybox-nav {
@@ -114,7 +115,7 @@
 	height: 100%;
 	cursor: pointer;
 	text-decoration: none;
-	background: transparent url('blank.gif'); /* helps IE */
+	background: transparent url('blank.gif')	; /* helps IE */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	z-index: 8040;
 }
