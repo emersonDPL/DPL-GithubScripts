@@ -4,17 +4,28 @@
 // =============IMPORT GOOGLE SHEETS=============
 // ==============================================
 
-//This is a change
-
 function endsWith(str, suffix)
 {
+	/* This function returns the last letter of a string.
+	This is used for checking if a cell ends with a ?
+	That way you can ask questions in the Google Sheet without changing the output on the live site
+	*/
+
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
-//Add the headers exactly as they appear in the google doc	
+
+
+
 function picturize(nStr) 
 {
+	/* This function replaces the contents of a cell from the google sheet with the appropriate line of code. 
+	Most of the time it returns the puppy. Though other cases are defined as well
+	*/
+	
 	var pup = '<img src="https://p6.zdassets.com/hc/theme_assets/1008146/200250647/x.png" alt="Available" style="width:20px; height:20px;">';
+	// Set up vairable pup
+	// This makes it easy to give the default image, which is the puppy
 
 	if (nStr.endsWith("?") === true)
 		return pup;
@@ -22,31 +33,45 @@ function picturize(nStr)
 	if (nStr.startsWith("#") === true)
 		return pup;
 
+	/* for each case, the algorithm checks if it matches any of the following phrases.
+	If it matches a phrase, it will return the assocated string or variable.
+	You can add any cases you need here, and you can use them in the google sheet.
+	Example, we added the "Avid" case, and set it up to return the string to show an avid icon.
+	*/
+
 	switch (nStr)
 	{
-		case "": 
+		case "": // If the Cell is empty, show a hyphen
 			return '-';
 			break;
-		case "X": 
+		case "X": // If the Cell is "X", show the puppy
 			return pup;
-			break;
-		case "AE": 
+			break; 
+		case "AE": // If the Cell is "AE", show the After Effects Icon
 			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/AE.png" alt="After Effects Plugin" style="width:20px; height:20px;">';
 			break;
-		case "Maya": 
+		case "Maya": // If the Cell is "Maya" show the Maya Icon
 			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/maya_nonAnimating.png" alt="Maya Plugin" style="width:20px; height:20px;">';
 			break;
-		case "PS": 
+		case "PS":  // If the Cell is "PS" show the Photoshop Icon
 			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/PS.png" alt="Photoshop Add-On" style="width:20px; height:20px;">';
 			break;
-		case "Avid":
+		case "Avid": // If the Cell is "Avid" show the Avid Icon
 			return '<img src="//p6.zdassets.com/hc/theme_assets/1008146/200250647/avid.png" alt="Avid Plugin" style="width:20px; height:20px;">';
 			break;
-		default: 
+		default: // If the cell doesn't match any of the above cases, just display what the cell says.
 			return nStr;
 			break;
 	}
 }
+
+
+/* 
+The Following 3 functions are nearly identical, though slight differences are because I have them all targeting different divs.
+I have them split into 3 different functions, since it is easy to just do a callback for what you need.
+Also I wasn't able to figure out how to pass a second variable to a callback.
+If you can figure that out, it could simplify these, since you wouldn't need 3 separate functions, you could just point it at different thigns based on the input variable.
+*/
 
 function displayDigital(json) 
 {
