@@ -154,5 +154,5 @@ function displayAudio(json)
 			actual_html+=['</tr>'].join('');
 		}
 	}
-	document.getElementById(digitalDiv).innerHTML += pre_html + actual_html + post_html;
+	document.getElementById(audioDiv).innerHTML += pre_html + actual_html + post_html;
 }  
