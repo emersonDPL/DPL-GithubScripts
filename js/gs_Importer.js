@@ -104,7 +104,7 @@ function displayDigital(json)
 			actual_html+=['</tr>'].join('');
 		}
 	}
-	document.getElementById("digsw").innerHTML += pre_html + actual_html + post_html;
+	document.getElementById(digitalDiv).innerHTML += pre_html + actual_html + post_html;
 }  
 
 function displayFilm(json) 
