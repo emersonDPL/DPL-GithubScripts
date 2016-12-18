@@ -4,7 +4,6 @@
 // =============IMPORT GOOGLE SHEETS=============
 // ==============================================
 
-
 // ==============================================
 // ============= Header  Definition =============
 // ==============================================
@@ -22,7 +21,6 @@ var digitalHeaders=[
 "DPL 2",
 "VEL",
 ];
-var digitalDiv="digsw";
 
 var filmHeaders=[
 "Software",
@@ -38,7 +36,6 @@ var filmHeaders=[
 "I",
 "Mix A",
 ];
-var filmDiv="filmsw";
 
 var audioHeaders=[
 "Software",
@@ -53,10 +50,6 @@ var audioHeaders=[
 "Audio H",
 "Mix B",
 ];
-
-var audioDiv="audiosw";
-
-
 
 function endsWith(str, suffix)
 {
@@ -158,7 +151,7 @@ function displayDigital(json)
 			actual_html+=['</tr>'].join('');
 		}
 	}
-	document.getElementById(digitalDiv).innerHTML += pre_html + actual_html + post_html;
+	document.getElementById("digsw").innerHTML += pre_html + actual_html + post_html;
 }  
 
 function displayFilm(json) 
@@ -193,7 +186,7 @@ function displayFilm(json)
 			actual_html+=['</tr>'].join('');
 		}
 	}
-	document.getElementById(filmDiv).innerHTML += pre_html + actual_html + post_html;
+	document.getElementById("filmsw").innerHTML += pre_html + actual_html + post_html;
 }
 
 function displayAudio(json) 
@@ -230,5 +223,5 @@ function displayAudio(json)
 			actual_html+=['</tr>'].join('');
 		}
 	}
-	document.getElementById(audioDiv).innerHTML += pre_html + actual_html + post_html;
+	document.getElementById("audiosw").innerHTML += pre_html + actual_html + post_html;
 }  
