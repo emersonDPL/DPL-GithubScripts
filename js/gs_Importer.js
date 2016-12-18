@@ -4,53 +4,6 @@
 // =============IMPORT GOOGLE SHEETS=============
 // ==============================================
 
-// ==============================================
-// ============= Header  Definition =============
-// ==============================================
-
-var digitalHeaders=[
-"Software",
-"Version",
-"A",
-"B",
-"C",
-"D",
-"E",
-"J",
-"DPL 1",
-"DPL 2",
-"VEL",
-];
-
-var filmHeaders=[
-"Software",
-"Version",
-"A",
-"B",
-"C",
-"D",
-"E",
-"F",
-"G",
-"H",
-"I",
-"Mix A",
-];
-
-var audioHeaders=[
-"Software",
-"Version",
-"Audio A",
-"Audio B",
-"Audio C",
-"Audio D",
-"Audio E",
-"Audio F",
-"Audio G",
-"Audio H",
-"Mix B",
-];
-
 function endsWith(str, suffix)
 {
 	/* This function returns the last letter of a string.
