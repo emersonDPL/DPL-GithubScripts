@@ -82,41 +82,41 @@ function displaySW(json, swType)
 
 	console.log("Loading " + swType + " software"); // Log which sw chart is loading
 
-	var pre_html = '<table class="tableSection table table-striped"><thead>';
-	for (var y = 0; y<thisHeader.length; y++)
+	var pre_html = '<table class="tableSection table table-striped"><thead>'; // start the beginning of the HTML Table
+	for (var y = 0; y<thisHeader.length; y++) //For each header, add HTML to the pre_html variable.
 	{
 		pre_html += [ "<th>"+thisHeader[y].toString()+"</th>" ].join('');
 	}
-	pre_html += ['</thead><tbody id="swlist"><tr>'].join('');
+	pre_html += ['</thead><tbody id="swlist"><tr>'].join(''); // end the pre_html HTML table tags.
 	
-	var actual_html='';
+	var actual_html=''; // Prep the actual_html variable for parsing the json.
 	
-	var post_html = '</tr></tbody></table>';
+	var post_html = '</tr></tbody></table>'; // Closing tags for HTML table
 	
-	var len = json.feed.entry.length;
+	var len = json.feed.entry.length; // set len to length of json.
 	
-	for (var i=0; i<len; i++) 
-	{
-		if (json.feed.entry[i]["gsx$status"]["$t"] !== "dead")
+	for (var i=0; i<len; i++) // for each entry in len
+	{ 
+		if (json.feed.entry[i]["gsx$status"]["$t"] !== "dead") // if the row isn't marked as dead in the Google Sheet
 		{
-			actual_html+=['<tr>'].join('');
+			actual_html+=['<tr>'].join('');// start row
 			
-			for (var j = 0; j<thisHeader.length; j++)
+			for (var j = 0; j<thisHeader.length; j++) // for each column
 			{
-				var curHeader=thisHeader[j].toString().toLowerCase().replace(" ", "");			
+				var curHeader=thisHeader[j].toString().toLowerCase().replace(" ", ""); // convert header to lower case, and remove spaces
 				actual_html+=[	
-				'<td>', 
-				picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
-				'</td>',
-				].join(''); 
+				'<td>', // start cell tag
+				picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), // run pictureize function on the individual element of the json
+				'</td>', // end cell tag
+				].join(''); // concatenate with previous cells, with no spaces
 			}
-			actual_html+=['</tr>'].join('');
+			actual_html+=['</tr>'].join(''); // end row
 		}
 	}
-	document.getElementById(thisDiv).innerHTML = pre_html + actual_html + post_html;
+	document.getElementById(thisDiv).innerHTML = pre_html + actual_html + post_html; // put the resulting HTML into the corresponding div
 }  
 
-// Input handlers
+// Input handlers, each passes the input json, and a string to the displaySW function
 function displayDigital (json) {
 	displaySW(json, "digital")
 }
@@ -128,120 +128,3 @@ function displayAudio (json) {
 function displayFilm (json) {
 	displaySW(json, "film")
 }
-
-
-/* 
-The Following 3 functions are nearly identical, though slight differences are because I have them all targeting different divs.
-I have them split into 3 different functions, since it is easy to just do a callback for what you need.
-Also I wasn't able to figure out how to pass a second variable to a callback.
-If you can figure that out, it could simplify these, since you wouldn't need 3 separate functions, you could just point it at different thigns based on the input variable.
-*/
-
-function displayDigitalSW(json, swType) 
-{
-
-	var pre_html = '<table class="tableSection table table-striped"><thead>';
-	for (var y = 0; y<digitalHeaders.length; y++)
-	{
-		pre_html += [ "<th>"+digitalHeaders[y].toString()+"</th>" ].join('');
-	}
-	pre_html += ['</thead><tbody id="swlist"><tr>'].join('');
-	
-	var actual_html='';
-	
-	var post_html = '</tr></tbody></table>';
-	
-	var len = json.feed.entry.length;
-	
-	for (var i=0; i<len; i++) 
-	{
-		if (json.feed.entry[i]["gsx$status"]["$t"] !== "dead")
-		{
-			actual_html+=['<tr>'].join('');
-			
-			for (var j = 0; j<digitalHeaders.length; j++)
-			{
-				var curHeader=digitalHeaders[j].toString().toLowerCase().replace(" ", "");			
-				actual_html+=[	
-				'<td>', 
-				picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
-				'</td>',
-				].join(''); 
-			}
-			actual_html+=['</tr>'].join('');
-		}
-	}
-	document.getElementById("digsw").innerHTML = pre_html + actual_html + post_html;
-}  
-
-function displayFilmSW(json) 
-{	
-	var pre_html = '<table class="tableSection table table-striped"><thead>';
-	for (var y = 0; y<filmHeaders.length; y++)
-	{
-		pre_html += [ "<th>"+filmHeaders[y].toString()+"</th>" ].join('');
-	}
-	pre_html += ['</thead><tbody id="swlist"><tr>'].join('');
-	
-	var actual_html='';
-	
-	var post_html = '</tr></tbody></table>';
-	
-	var len = json.feed.entry.length;
-	
-	for (var i=0; i<len; i++) 
-	{
-		actual_html+=['<tr>'].join('');
-		if (json.feed.entry[i]["gsx$status"]["$t"] !== "dead")
-		{
-			for (var j = 0; j<filmHeaders.length; j++)
-			{
-				var curHeader=filmHeaders[j].toString().toLowerCase().replace(" ", "");
-				actual_html+=[	
-				'<td>', 
-				picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
-				'</td>',
-				].join(''); 
-			}
-			actual_html+=['</tr>'].join('');
-		}
-	}
-	document.getElementById("filmsw").innerHTML = pre_html + actual_html + post_html;
-}
-
-function displayAudioSW(json) 
-{
-
-	var pre_html = '<table class="tableSection table table-striped"><thead>';
-	for (var y = 0; y<audioHeaders.length; y++)
-	{
-		pre_html += [ "<th>"+audioHeaders[y].toString()+"</th>" ].join('');
-	}
-	pre_html += ['</thead><tbody id="swlist"><tr>'].join('');
-	
-	var actual_html='';
-	
-	var post_html = '</tr></tbody></table>';
-	
-	var len = json.feed.entry.length;
-	
-	for (var i=0; i<len; i++) 
-	{
-		if (json.feed.entry[i]["gsx$status"]["$t"] !== "dead")
-		{
-			actual_html+=['<tr>'].join('');
-			
-			for (var j = 0; j<audioHeaders.length; j++)
-			{
-				var curAudHeader=audioHeaders[j].toString().toLowerCase().replace(" ", "");			
-				actual_html+=[	
-				'<td>', 
-				picturize(json.feed.entry[i]["gsx$"+curAudHeader]["$t"]), 
-				'</td>',
-				].join(''); 
-			}
-			actual_html+=['</tr>'].join('');
-		}
-	}
-	document.getElementById("audiosw").innerHTML = pre_html + actual_html + post_html;
-}  
