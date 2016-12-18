@@ -18,6 +18,14 @@ function displayDigital (json) {
 	displaySW(json, "digital")
 }
 
+function displayAudioSW (json) {
+	displaySW(json, "audio")
+}
+
+function displayFilmSW (json) {
+	displaySW(json, "film")
+}
+
 function picturize(nStr) 
 {
 	/* This function replaces the contents of a cell from the google sheet with the appropriate line of code. 
@@ -68,12 +76,23 @@ function picturize(nStr)
 
 function displaySW(json, swType) 
 {
+	//Figure out which div to target, based on input
 	if (swType == "digital") {
 		var thisHeader = digitalHeaders;
 		var thisDiv = "digsw"
 	}
 
-	Debug.Log("Loading " + swType + " software");
+	if (swType == "film") {
+		var thisHeader = filmHeaders;
+		var thisDiv = "filmsw"
+	}
+
+	if (swType == "audio") {
+		var thisHeader = audioHeaders;
+		var thisDiv = "audiosw"
+	}
+
+	Debug.Log("Loading " + swType + " software"); // Log which sw chart is loading
 
 	var pre_html = '<table class="tableSection table table-striped"><thead>';
 	for (var y = 0; y<thisHeader.length; y++)
