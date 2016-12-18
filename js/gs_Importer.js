@@ -9,7 +9,7 @@
 // ============= Header  Definition =============
 // ==============================================
 
-digitalHeaders=[
+var digitalHeaders=[
 "Software",
 "Version",
 "A",
@@ -22,9 +22,9 @@ digitalHeaders=[
 "DPL 2",
 "VEL",
 ];
-digitalDiv="digsw";
+var digitalDiv="digsw";
 
-filmHeaders=[
+var filmHeaders=[
 "Software",
 "Version",
 "A",
@@ -38,9 +38,9 @@ filmHeaders=[
 "I",
 "Mix A",
 ];
-filmDiv="filmsw";
+var filmDiv="filmsw";
 
-audioHeaders=[
+var audioHeaders=[
 "Software",
 "Version",
 "Audio A",
@@ -54,7 +54,7 @@ audioHeaders=[
 "Mix B",
 ];
 
-audioDiv="audiosw";
+var audioDiv="audiosw";
 
 
 
