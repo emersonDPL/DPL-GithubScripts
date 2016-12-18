@@ -14,18 +14,6 @@ function endsWith(str, suffix)
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
-function displayDigital (json) {
-	displaySW(json, "digital")
-}
-
-function displayAudio (json) {
-	displaySW(json, "audio")
-}
-
-function displayFilm (json) {
-	displaySW(json, "film")
-}
-
 function picturize(nStr) 
 {
 	/* This function replaces the contents of a cell from the google sheet with the appropriate line of code. 
@@ -127,6 +115,19 @@ function displaySW(json, swType)
 	}
 	document.getElementById(thisDiv).innerHTML = pre_html + actual_html + post_html;
 }  
+
+// Input handlers
+function displayDigital (json) {
+	displaySW(json, "digital")
+}
+
+function displayAudio (json) {
+	displaySW(json, "audio")
+}
+
+function displayFilm (json) {
+	displaySW(json, "film")
+}
 
 
 /* 
