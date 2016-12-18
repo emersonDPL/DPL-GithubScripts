@@ -92,7 +92,7 @@ function displaySW(json, swType)
 		var thisDiv = "audiosw"
 	}
 
-	Debug.Log("Loading " + swType + " software"); // Log which sw chart is loading
+	console.Log("Loading " + swType + " software"); // Log which sw chart is loading
 
 	var pre_html = '<table class="tableSection table table-striped"><thead>';
 	for (var y = 0; y<thisHeader.length; y++)
