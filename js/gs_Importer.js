@@ -73,6 +73,7 @@ function displaySW(json, swType)
 		var thisDiv = "digsw"
 	}
 
+	Debug.Log("Loading " + swType + " software");
 
 	var pre_html = '<table class="tableSection table table-striped"><thead>';
 	for (var y = 0; y<thisHeader.length; y++)
