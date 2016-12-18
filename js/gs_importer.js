@@ -14,9 +14,6 @@ function endsWith(str, suffix)
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
-
-
-
 function picturize(nStr) 
 {
 	/* This function replaces the contents of a cell from the google sheet with the appropriate line of code. 
