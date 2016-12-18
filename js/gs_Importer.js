@@ -184,7 +184,6 @@ function fullWidth(){
         $(".col-md-3.col-sm-3.col-xs-12").remove()
         $("#article-column").removeClass()
         $("#article-column").addClass("col-xs-12 section-wrapper-right-side")
-        $(".table-of-contents").remove()
         $("#digsw").removeClass()
         $("#digsw").addClass("col-xs-12")
 		$(".recent-articles").remove()
