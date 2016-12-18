@@ -178,13 +178,3 @@ function displayAudio(json)
 	}
 	document.getElementById("audiosw").innerHTML = pre_html + actual_html + post_html;
 }  
-
-
-function fullWidth(){
-        $(".col-md-3.col-sm-3.col-xs-12").remove()
-        $("#article-column").removeClass()
-        $("#article-column").addClass("col-xs-12 section-wrapper-right-side")
-        $("#digsw").removeClass()
-        $("#digsw").addClass("col-xs-12")
-		$(".recent-articles").remove()
-}
