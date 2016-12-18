@@ -151,7 +151,7 @@ function displayDigital(json)
 			actual_html+=['</tr>'].join('');
 		}
 	}
-	document.getElementById("digsw").innerHTML += pre_html + actual_html + post_html;
+	document.getElementById("digsw").innerHTML = pre_html + actual_html + post_html;
 }  
 
 function displayFilm(json) 
@@ -186,7 +186,7 @@ function displayFilm(json)
 			actual_html+=['</tr>'].join('');
 		}
 	}
-	document.getElementById("filmsw").innerHTML += pre_html + actual_html + post_html;
+	document.getElementById("filmsw").innerHTML = pre_html + actual_html + post_html;
 }
 
 function displayAudio(json) 
@@ -223,5 +223,5 @@ function displayAudio(json)
 			actual_html+=['</tr>'].join('');
 		}
 	}
-	document.getElementById("audiosw").innerHTML += pre_html + actual_html + post_html;
+	document.getElementById("audiosw").innerHTML = pre_html + actual_html + post_html;
 }  
