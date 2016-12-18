@@ -18,11 +18,11 @@ function displayDigital (json) {
 	displaySW(json, "digital")
 }
 
-function displayAudioSW (json) {
+function displayAudio (json) {
 	displaySW(json, "audio")
 }
 
-function displayFilmSW (json) {
+function displayFilm (json) {
 	displaySW(json, "film")
 }
 
@@ -173,7 +173,7 @@ function displayDigitalSW(json, swType)
 	document.getElementById("digsw").innerHTML = pre_html + actual_html + post_html;
 }  
 
-function displayFilm(json) 
+function displayFilmSW(json) 
 {	
 	var pre_html = '<table class="tableSection table table-striped"><thead>';
 	for (var y = 0; y<filmHeaders.length; y++)
@@ -208,7 +208,7 @@ function displayFilm(json)
 	document.getElementById("filmsw").innerHTML = pre_html + actual_html + post_html;
 }
 
-function displayAudio(json) 
+function displayAudioSW(json) 
 {
 
 	var pre_html = '<table class="tableSection table table-striped"><thead>';
