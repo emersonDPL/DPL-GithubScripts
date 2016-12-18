@@ -1,0 +1,96 @@
+<div class="table-of-contents off"> </div>
+
+<script src="https://rawgit.com/emersonDPL/DPL-GithubScripts/master/js/sw_Searcher.js"></script>
+<script src="https://rawgit.com/emersonDPL/DPL-GithubScripts/master/js/tabbedDivs.js"></script>
+<script type="text/javascript">
+	//Add headers exactly as they apppear in the Google Sheet
+	//If a header is misspelled, or doesn't exist, the table will break.
+	//You can re-arrange the headers if you wish. 
+  
+	digitalHeaders=[
+	"Software",
+	"Version",
+	"A",
+	"B",
+	"C",
+	"D",
+	"E",
+	"J",
+	"DPL 1",
+	"DPL 2",
+	"VEL",
+	];
+	filmHeaders=[
+	"Software",
+	"Version",
+	"A",
+	"B",
+	"C",
+	"D",
+	"E",
+	"F",
+	"G",
+	"H",
+	"I",
+	"Mix A",
+	];
+	
+	audioHeaders=[
+	"Software",
+	"Version",
+	"Audio A",
+	"Audio B",
+	"Audio C",
+	"Audio D",
+	"Audio E",
+	"Audio F",
+	"Audio G",
+	"Audio H",
+	"Mix B",
+	];
+</script>
+
+<script src="https://rawgit.com/emersonDPL/DPL-GithubScripts/master/js/gs_Importer.js"></script>
+<!-- This script is the Google Sheets (GS) importer -->
+
+<div class="container-fluid">
+	<div id="header">
+		<p>Welcome to Emerson College's Post Production Labs. The chart below shows the various software we have available in our labs and suites on campus. If you have any questions, comments, or suggestions for new software. Let us know!</p>
+	</div>
+	<div id="searcher">
+		<div>
+			<input id="search" class="form-control" type="text" placeholder="Search for software..." />
+		</div>
+		<div id="nosw" style="float: center; display: none;">	
+			<!-- This div shows or hides itself based on whether or not we have the software -->
+			<p class="text-danger">We don't own any licenses for that software</p>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<div class="row">
+		<ul class="tabs">
+			<li class="tab-link current" data-tab="tab-1">Digital</li>
+			<li class="tab-link" data-tab="tab-2">Film</li>
+			<li class="tab-link" data-tab="tab-3">Audio</li>
+		</ul>
+		<div id="tab-1" class="tab-content current col-xs-12 sw-chart">
+			<div id="digsw" class="col-xs-12">Loading...</div>
+		</div>
+		
+		<div id="tab-2" class="tab-content col-xs-12 sw-chart">
+			<div id="filmsw" class="col-xs-12">Loading...</div>
+		</div>
+
+		<div id="tab-3" class="tab-content col-xs-12 sw-chart">
+			<div id="audiosw" class="col-xs-12">Loading...</div>
+		</div>
+
+		<div class="sw-foot col-xs-12">
+		</div>
+	</div>
+</div>
+<!-- The following lines are references to the google spreadseet that callback the function from the google sheets importer script -->
+<script src="https://spreadsheets.google.com/feeds/list/1-gmcB6mDge7Xbmt6fxA3oR70QmOitHnIeJuGTorihgM/3/public/values?alt=json-in-script&amp;callback=displayDigital" type="text/javascript"></script>
+<script src="https://spreadsheets.google.com/feeds/list/1-gmcB6mDge7Xbmt6fxA3oR70QmOitHnIeJuGTorihgM/4/public/values?alt=json-in-script&amp;callback=displayFilm" type="text/javascript"></script>
+<script src="https://spreadsheets.google.com/feeds/list/1-gmcB6mDge7Xbmt6fxA3oR70QmOitHnIeJuGTorihgM/5/public/values?alt=json-in-script&amp;callback=displayAudio" type="text/javascript"></script>
+<script>fullArticle()</script>

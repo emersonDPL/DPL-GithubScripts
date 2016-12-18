@@ -14,6 +14,10 @@ function endsWith(str, suffix)
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
 }
 
+function displayDigital (json) {
+	displaySW(json, "digital")
+}
+
 function picturize(nStr) 
 {
 	/* This function replaces the contents of a cell from the google sheet with the appropriate line of code. 
@@ -62,6 +66,48 @@ function picturize(nStr)
 	}
 }
 
+function displaySW(json, swType) 
+{
+	if (swType == "digital") {
+		var thisHeader = digitalHeaders;
+		var thisDiv = "digsw"
+	}
+
+
+	var pre_html = '<table class="tableSection table table-striped"><thead>';
+	for (var y = 0; y<thisHeader.length; y++)
+	{
+		pre_html += [ "<th>"+thisHeader[y].toString()+"</th>" ].join('');
+	}
+	pre_html += ['</thead><tbody id="swlist"><tr>'].join('');
+	
+	var actual_html='';
+	
+	var post_html = '</tr></tbody></table>';
+	
+	var len = json.feed.entry.length;
+	
+	for (var i=0; i<len; i++) 
+	{
+		if (json.feed.entry[i]["gsx$status"]["$t"] !== "dead")
+		{
+			actual_html+=['<tr>'].join('');
+			
+			for (var j = 0; j<thisHeader.length; j++)
+			{
+				var curHeader=thisHeader[j].toString().toLowerCase().replace(" ", "");			
+				actual_html+=[	
+				'<td>', 
+				picturize(json.feed.entry[i]["gsx$"+curHeader]["$t"]), 
+				'</td>',
+				].join(''); 
+			}
+			actual_html+=['</tr>'].join('');
+		}
+	}
+	document.getElementById(thisDiv).innerHTML = pre_html + actual_html + post_html;
+}  
+
 
 /* 
 The Following 3 functions are nearly identical, though slight differences are because I have them all targeting different divs.
@@ -70,7 +116,7 @@ Also I wasn't able to figure out how to pass a second variable to a callback.
 If you can figure that out, it could simplify these, since you wouldn't need 3 separate functions, you could just point it at different thigns based on the input variable.
 */
 
-function displayDigital(json) 
+function displayDigitalSW(json, swType) 
 {
 
 	var pre_html = '<table class="tableSection table table-striped"><thead>';
