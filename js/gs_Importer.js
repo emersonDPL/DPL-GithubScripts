@@ -4,6 +4,60 @@
 // =============IMPORT GOOGLE SHEETS=============
 // ==============================================
 
+
+// ==============================================
+// ============= Header  Definition =============
+// ==============================================
+
+digitalHeaders=[
+"Software",
+"Version",
+"A",
+"B",
+"C",
+"D",
+"E",
+"J",
+"DPL 1",
+"DPL 2",
+"VEL",
+];
+digitalDiv="digsw";
+
+filmHeaders=[
+"Software",
+"Version",
+"A",
+"B",
+"C",
+"D",
+"E",
+"F",
+"G",
+"H",
+"I",
+"Mix A",
+];
+filmDiv="filmsw";
+
+audioHeaders=[
+"Software",
+"Version",
+"Audio A",
+"Audio B",
+"Audio C",
+"Audio D",
+"Audio E",
+"Audio F",
+"Audio G",
+"Audio H",
+"Mix B",
+];
+
+audioDiv="audiosw";
+
+
+
 function endsWith(str, suffix)
 {
 	/* This function returns the last letter of a string.
