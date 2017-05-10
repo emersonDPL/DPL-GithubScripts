@@ -1,0 +1,267 @@
+/* ====================================================
+===================== Sean  Edits =====================
+==================================================== */
+
+/* ----------------------------------------------------
+-------------------- Whole Site
+---------------------------------------------------- */
+
+.homeIcon span {
+  font-size: 3em;
+}
+
+
+.btn-info {
+  /* Change info color to match site color 5 */
+  background-color: $color_5 !important;
+  border-color: transparent !important;
+}
+
+/* ----------------------------------------------------
+--------------------- Header
+---------------------------------------------------- */
+
+.logo img {
+    max-width: 250px;
+}
+
+.banner {
+  padding: 5px;
+  margin
+}
+
+.banner-red {
+  background-color: firebrick;
+  color: white;
+  font-weight: bold;
+}
+
+.banner-yellow {
+  background-color:  #ffc61a;
+  color: black;
+  font-weight: bold;
+}
+
+.banner-text {
+  margin: 0px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+/* ----------------------------------------------------
+--------------------- Home Page
+---------------------------------------------------- */
+
+#homeSoft {
+  border-right: $color_3;
+  border-right-style: solid;
+}
+
+.appIcon {
+  width: 60%;
+}
+
+.more-wares {
+  padding-top: 10px;
+}
+
+/* Media Query for moving divider when stacked vertically instead of horizontally */
+@media only screen and (max-width : 992px) {
+    #homeSoft {
+      border-right: transparent;
+      border-right-style: solid;
+      padding-bottom: 15px;
+      border-bottom: $color_3;
+      border-bottom-style: solid;
+    }
+}
+
+
+/* ----------------------------------------------------
+-------------------- Article Page
+---------------------------------------------------- */
+
+.table-of-contents {
+  padding-top: 15px;
+  margin-bottom: 15px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(227, 227, 227);
+}
+
+.table-of-contents h1 {
+  font-size: 23px;
+}
+
+.article-body a {
+  color: $color_5;  
+}
+
+.article-body h2 {
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgb(45, 44, 44);
+  padding-top: 15px;
+  margin-top: 30px;
+}
+
+.article-body h3 {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgb(227, 227, 227);
+  padding-top: 15px;
+  margin-top: 30px;
+}
+
+.article-img {
+    padding: 10px;
+}
+
+/* Since the <code> tag doesn't work, this is my work around for now, other than using Gists */
+
+.code > p {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+/* Imported Article Styling */
+
+.imported-article {
+  background-color: whitesmoke;
+  padding: 15px 10px 10px 10px;
+  border-radius: 10px;
+}
+
+/* ----------------------------------------------------
+-------------------- Software Chart
+---------------------------------------------------- */
+
+.table-condensed p {
+  margin: 0;
+}
+
+/* Tabbed Content */
+
+ul.tabs{
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+    }
+
+ul.tabs li{
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.current{
+  background: #ededed;
+  color: #222;
+}
+
+.tab-content{
+  display: none;
+  background: #ededed;
+}
+
+.tab-content.current{
+  display: inherit;
+}
+
+
+/* Table Styling */
+
+.table-striped>tbody>tr:nth-of-type(even) {
+  background-color: whitesmoke;
+}
+
+.chart-filter li {
+    display: inline;
+}
+
+.sw-chart {
+  overflow: auto;
+  height: 500px;
+  margin-bottom: 25px;
+}
+
+.sw-foot {
+  height: 25px;
+  color: #ededed;
+}
+
+/* Center all the cells that aren't headers */
+
+tr>td:nth-child(n+3) {
+    text-align: center;
+}
+
+tr>th:nth-child(n+3) {
+    text-align: center;
+}
+
+/* ----------------------------------------------------
+-------------------- Gists
+---------------------------------------------------- */
+
+.gist { 
+  /* Prevent gist code blocks from messing up the "Back to Top" links */
+  padding: 10px;
+}
+
+/* Limit specific gists to a certain height */
+
+#gist42827629 > div > div.gist-data {
+  height: 200px;
+}
+
+#gist42829093 > div > div.gist-data {
+  height: 300px;
+}
+
+#gist42991595 > div > div.gist-data {
+  height: 300px;
+}
+
+/* ----------------------------------------------------
+-------------------- Footer
+---------------------------------------------------- */
+
+#footerDisclaimer {
+  color: #777;
+}
+
+.footInfo {
+  padding-right: 75px;
+}
+
+.hc-footer {
+  line-height: .5;
+}
+
+.footer-bg {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+.footer-padding {
+  padding-top: 0px;
+  padding-top: 0px;
+}
+
+/* ----------------------------------------------------
+-------------------- Plugins
+---------------------------------------------------- */
+
+.fancybox-outer {
+      padding-top: 50px;
+    }
