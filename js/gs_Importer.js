@@ -80,6 +80,11 @@ function displaySW(json, swType)
 		var thisDiv = "audiosw"
 	}
 
+	if (swType == "3dl") {
+		var thisHeader = threedheaders;
+		var thisDiv = "3dsw"
+	}
+
 	console.log("Loading " + swType + " software"); // Log which sw chart is loading
 
 	var pre_html = '<table class="tableSection table table-striped"><thead>'; // start the beginning of the HTML Table
@@ -127,4 +132,8 @@ function displayAudio (json) {
 
 function displayFilm (json) {
 	displaySW(json, "film")
+}
+
+function display3DL (json) {
+	displaySW(json, "3dl")
 }
